@@ -2,7 +2,6 @@
 :root {
   --card-height: 130px;
   --card-width: calc(var(--card-height) * (6 / 4));
-  --i: 0;
 }
 
 body {
@@ -26,12 +25,6 @@ body {
   position: absolute;
 
   background-color: hsl(315, 100%, 60%);
-
   transform: rotate(-45deg);
   transform-origin: center 120%;
-  
-}
-
-.card:nth-child(2) {
-  --i: 1;
 }
