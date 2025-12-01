@@ -1,4 +1,4 @@
-﻿# Exercise-Color-Cards-Hard
+﻿# Exercise-Color-Cards
 
 I denna övning ska ni skriva klart CSS-koden så ni får följande resultat på skärmen:
 
@@ -14,3 +14,4 @@ All kod som ni sedan behöver skriva, ska vara i er valda CSS_fil.
 
 
 Lycka till!
+
