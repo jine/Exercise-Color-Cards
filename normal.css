@@ -33,6 +33,7 @@ body {
   /* hint - second color is hue 275, third is 235 ... */
 
   /* NOTE TO SELF: diff = 40 degrees, so... in the .card "loop" below, set background to -40 degrees... */
+  /* I CAN remove the temp vars, but this is how i thought about it first... */
 
   --temp: calc(-40 * var(--i));
   --temp2: calc(var(--hsl) - var(--temp));
@@ -44,10 +45,10 @@ body {
   */
   
   /* hint - the cards are stacked in the wrong order, can we change that with a css property? */
+  /* use --i but invert it with some math (forgot what this is called, invert thingy) */
+  z-index: calc(-1 * var(--i));
 
-/* hint - use nth-child selectors or similar and override variables */
-
-
+  /* hint - use nth-child selectors or similar and override variables */
   /* hint - use rotate with variables and offset the rotation origin */
   /* hint - first card is at -45deg then add 10deg for each */
 
@@ -55,7 +56,8 @@ body {
   transform: rotate(calc(-45deg + (var(--i) * 10deg)));
   transform-origin: center 120%;
 
-/* NOTE TO SELF: Is it possible to short this? is there whiile / for looping in css??? this doesnt feel DRY with n+1 */
+
+  /* NOTE TO SELF: Is it possible to short this? is there whiile / for looping in css??? this doesnt feel DRY with n+1 */
   &:nth-child(2) {
     --i: 1;
   }
