@@ -30,17 +30,46 @@ body {
 
   /* hint - hue in hsl goes from 0-360 */
   /* hint - second color is hue 275, third is 235 ... */
+
+  /* NOTE TO SELF: diff = 40 degrees, so... in the .card "loop" below, set background to +40 degrees... */
   background-color: hsl(315, 100%, 60%);
 
   /* hint - use rotate with variables and offset the rotation origin */
   /* hint - first card is at -45deg then add 10deg for each */
-  transform: rotate(-45deg);
+
+  /* rotate the cards based on --i var */
+  transform: rotate(calc(-45deg + (var(--i) * 10deg)));
   transform-origin: center 120%;
   
   /* hint - the cards are stacked in the wrong order, can we change that with a css property? */
 }
 
 /* hint - use nth-child selectors or similar and override variables */
-.card:nth-child(2) {
-  --i: 1;
+
+/* NOTE TO SELF: Is it possible to short this? is there whiile / for looping in css??? this doesnt feel DRY with n+1 */
+.card {
+  &:nth-child(2) {
+    --i: 1;
+  }
+  &:nth-child(3) {    
+    --i: 2;
+  }
+  &:nth-child(4) {
+    --i: 3;
+  }
+  &:nth-child(5) {
+    --i: 4;
+  }
+  &:nth-child(6) {
+    --i: 5;
+  }
+  &:nth-child(7) {
+    --i: 6;
+  }
+  &:nth-child(8) {
+    --i: 7;
+  }
+  &:nth-child(9) {
+    --i: 8;
+  }
 }
