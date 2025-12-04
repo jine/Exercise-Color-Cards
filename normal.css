@@ -2,8 +2,8 @@
 :root {
   --card-height: 130px;
   --card-width: calc(var(--card-height) * (6 / 4));
-  --i: 0;
-  --hsl: 315;
+  --i: 0; /* i hate languages that start couting on 1 */
+  --hsl: 315; /* starting hue for HSL for first card */
 }
 
 /* put the stack of cards in center */
