@@ -3,6 +3,7 @@
   --card-height: 130px;
   --card-width: calc(var(--card-height) * (6 / 4));
   --i: 0;
+  --hsl: 315;
 }
 
 /* put the stack of cards in center */
@@ -31,23 +32,30 @@ body {
   /* hint - hue in hsl goes from 0-360 */
   /* hint - second color is hue 275, third is 235 ... */
 
-  /* NOTE TO SELF: diff = 40 degrees, so... in the .card "loop" below, set background to +40 degrees... */
-  background-color: hsl(315, 100%, 60%);
+  /* NOTE TO SELF: diff = 40 degrees, so... in the .card "loop" below, set background to -40 degrees... */
+
+  --temp: calc(-40 * var(--i));
+  --temp2: calc(var(--hsl) - var(--temp));
+  background-color: hsl(var(--temp2), 100%, 60%);
+
+  /*
+  2*-40 = -80
+  275 -80  235
+  */
+  
+  /* hint - the cards are stacked in the wrong order, can we change that with a css property? */
+
+/* hint - use nth-child selectors or similar and override variables */
+
 
   /* hint - use rotate with variables and offset the rotation origin */
   /* hint - first card is at -45deg then add 10deg for each */
 
-  /* rotate the cards based on --i var */
+  /* rotate the cards based on --i variable */
   transform: rotate(calc(-45deg + (var(--i) * 10deg)));
   transform-origin: center 120%;
-  
-  /* hint - the cards are stacked in the wrong order, can we change that with a css property? */
-}
-
-/* hint - use nth-child selectors or similar and override variables */
 
 /* NOTE TO SELF: Is it possible to short this? is there whiile / for looping in css??? this doesnt feel DRY with n+1 */
-.card {
   &:nth-child(2) {
     --i: 1;
   }
